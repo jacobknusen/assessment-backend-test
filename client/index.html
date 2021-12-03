@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Back End Assessment</title>
+  </head>
+  <class="container">
+    <button id="complimentButton">Get a compliment</button>
+    <button id = 'fortunebutton'>Get a fortune</button>
+    <button id = "goalbutton"> get a new daily goal</button> 
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script>
+      document.getElementById("complimentButton").onclick = function () {
+        axios.get("http://localhost:4000/api/compliment/")
+            .then(function (response) {
+              const data = response.data;
+              alert(data);
+            });
+      };
+    </script>
+    <script>
+      document.getElementById('fortunebutton').onclick = function () {
+        axios.get("http://localhost:4000/api/fortune/")
+            .then(function (response) {
+              const data = response.data;
+              alert(data);
+            });
+      };
+    </script>
+    <script>
+      document.getElementById('goalbutton').onclick = function () {
+        axios.get("http://localhost:4000/api/goal/")
+            .then(function (response) {
+              const data = response.data;
+              alert(data);
+            });
+      };
+    </script>
+    <label for="fav-movie">Choose your favorite movie from the list:</label>
+    <select name="fav-movie" id="fav-movie">
+        <option value="Wolf of Wall St.">Wolf of Wall St.</option>
+      <option value="Step Brothers">Step Brothers</option>
+      <option value="Red listed">Red listed</option>
+      <option value=" The Social Network"> The Social Network</option>
+      <option value="toystory1">Toy story 1</option>
+      <option value="toystory2">Toy story 2</option>
+      <option value="toystory3">Toy story 3</option>
+      <option value="toystory4">Toy story 4</option>
+      <option value="hercules">The amazing hercules</option>
+
+    </select>
+  
+    
+    <input type="text"> What is your favorite color?
+
+    <script>
+      document.getElementById('users').onclick = function () {
+        axios.postt("http://localhost:4000/api/users/")
+            .then(function (response) {
+              const data = response.data;
+              alert(data);
+            });
+      };
+    </script>
+    
+  </body>
+</html>
